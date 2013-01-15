@@ -1,0 +1,6 @@
+# configurando suas informações
+git config --global user.name "Nome"
+git config --global user.email nome@example.com
+
+# colorindo o terminal do git
+git config --global color.ui true
