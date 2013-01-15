@@ -4,3 +4,15 @@ git config --global user.email nome@example.com
 
 # colorindo o terminal do git
 git config --global color.ui true
+
+function parse_git_branch {
+ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+echo " ["${ref#refs/heads/}"]" # I wanted my branch wrapped in [], use () or <> or whatever
+}
+
+
+export PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\033[01;32m$(parse_git_branch)\033[00m\$ '
+#PS1="\h:\W \u\$" # For reference, here's the default OS X prompt
+#export PS1="\$(rvm_version)\W \$(parse_git_branch)\$ " # Without the colors
+
+# I had to put the \[ and \] down here, as opposed to $IRED, to avoid wrapping funkiness.
