@@ -1,0 +1,24 @@
+# Main
+alias list="eza -l --git --icons"
+alias edit-config="vim ~/.zshrc"
+alias reload-config="source ~/.zshrc"
+alias edit-aliases="vim ~/.zsh_aliases"
+alias edit-tokens="vim ~/.zsh_tokens"
+alias reload-tokens="vim ~/.zsh_tokens"
+alias list-aliases="bat -l=sh --paging=always ~/.zsh_aliases"
+
+# Update stuffs
+alias upgrade-brew="brew update && brew upgrade && brew cleanup"
+alias update-omz="omz update"
+
+# Git
+alias fetch-repo="git fetch --prune"
+alias push-to-head="git push -u origin HEAD"
+alias sync-with-main="git merge origin/main"
+
+# Docker
+alias composer-start="colima start && docker-compose up -d"
+alias composer-shutdown="docker-compose down"
+alias composer-status="docker-compose ps"
+alias composer-prune='docker rm $(docker ps -a -f status=exited -q) && docker volume prune --all'
+
